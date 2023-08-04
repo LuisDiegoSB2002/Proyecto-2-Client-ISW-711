@@ -1,0 +1,43 @@
+/* styles.css */
+
+/* Reset de estilos para el body y el navbar */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  box-shadow: 0 2px 5px rgba(22, 65, 115, 0.399); /* Sombra para resaltar el navbar */
+}
+
+.name-user {
+  font-size: 20px;
+  margin: 0;
+  color: #000000; /* Color del texto del nombre de usuario */
+}
+
+.btn-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 1150px;
+}
+
+.btn-nav img {
+  height: 40px;
+  margin: 8px;
+}
+
+.navbar-logout img {
+  height: 30px;
+  margin-left: 15px;
+}
+
+
+
+

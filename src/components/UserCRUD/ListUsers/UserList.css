@@ -1,0 +1,55 @@
+/* styles.css */
+
+/* Estilos generales para el contenedor */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Estilos para cada usuario */
+  .user {
+    margin: 20px;
+    padding: 20px;
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff;
+    width: 90%; /* Ancho de cada usuario (ajustar según tu preferencia) */
+  }
+  
+  .user p {
+    margin: 0;
+  }
+  
+  /* Estilos para los botones */
+  .btn-create,
+  .btn-edit,
+  .btn-delete {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .btn-create img,
+  .btn-edit img,
+  .btn-delete img {
+    height: 20px; /* Ajustar el tamaño de las imágenes según tu preferencia */
+  }
+  
+  /* Estilos para el botón "Volver" */
+  .btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    
+  }
+  
