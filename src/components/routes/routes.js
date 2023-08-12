@@ -12,6 +12,7 @@ import CreatePrompts from "../PromptsCRUD/CreatePrompts/CreatePrompts.js";
 import EditPrompts from "../PromptsCRUD/EditPrompts/EditPrompts.js";
 import DeletePrompts from "../PromptsCRUD/DeletePrompts/DeletePrompts.js";
 
+import ValidarSendEmail from "../validacion/validateEmail.js";
 import Logout from "../Logout/Logout.js";
 function AllRoutes() {
 
@@ -19,7 +20,7 @@ function AllRoutes() {
         <BrowserRouter> 
             <Routes>
 
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/homePage" element={<HomePage />} />
                 <Route path="/navBar" element={<Navbar />} />
@@ -30,6 +31,7 @@ function AllRoutes() {
                 <Route path="/createPrompts" element={<CreatePrompts/>} />
                 <Route path="/DeletePrompts/:id" element={<DeletePrompts/>} />
                 <Route path="/EditPrompts/:id" element={<EditPrompts/>} />
+                <Route path="/validarEmail/:token" element={<ValidarSendEmail/>} />
                 <Route path="/Logout" element={<Logout/>} />
 
             </Routes>
