@@ -43,7 +43,7 @@ const ValidarSendEmail = () => {
       //const token = response.data.token; // Asegúrate de que el servidor envíe el token en la respuesta
       
       monstrarAlertaSucess();
-      navigate("/Login");
+      navigate("/");
     } catch (error) {
       monstrarAlertaError();
       console.error(error);

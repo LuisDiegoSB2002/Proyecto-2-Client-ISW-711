@@ -7,6 +7,7 @@ const EditUser = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
+  const [estado, setEstado] = useState('');
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -29,16 +30,17 @@ const EditUser = () => {
 
   const handleEditUser = async () => {
     try {
-      // Realizar la solicitud PUT al servidor
+      // Realizar la solicitud PUT al servidor 
       const response = await fetch(`http://localhost:3001/editUser/${id}`, {
-        method: 'PUT',
+        method: 'patch',
         headers: {
           Authorization: "Bearer " + sessionStorage.getItem("token")
         },
         body: JSON.stringify({
           name,
           email,
-          role
+          role,
+          estado
         })
       });
 
@@ -65,6 +67,10 @@ const EditUser = () => {
         <select type="role1" value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="user">user</option>
           <option value="admin">admin</option>
+        </select>
+        <select type="role1" value={estado} onChange={(e) => setEstado(e.target.value)}>
+          <option value="activo">Activo</option>
+          <option value="inactivo">Inactivo</option>
         </select>
         <button type="button" onClick={handleEditUser}>Guardar Cambios</button>
         <Link to ="/UserList" className='btn-volver'> Volver</Link>

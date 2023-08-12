@@ -11,7 +11,7 @@ const Logout = () => {
         sessionStorage.removeItem("token");
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("id");
-         navigate("/Login"); 
+         navigate("/"); 
     };
 
     return (

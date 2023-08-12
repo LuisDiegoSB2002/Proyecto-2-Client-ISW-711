@@ -8,23 +8,14 @@ import sweet from 'sweetalert';
 const monstrarAlertaSucess = () => {
 
   sweet({
-    title: "Correo Validado con Éxito.",
-    text: "El registro se a realizado con éxito.",
+    title: "El correo fue enviado con éxito",
+    text: "",
     icon: "success",
     buttons: "Aceptar"
   });
 
 }
-const monstrarAlertaError = () => {
 
-  sweet({
-    title: "Su correo no es válido",
-    text: "",
-    icon: "error",
-    buttons: "Aceptar"
-  });
-
-}
 
 
 
@@ -59,8 +50,8 @@ const Register = () => {
 
       const response = await axios.post('http://localhost:3001/register', { name, email, phone, password });
 
-
-      //navigate("/Login");
+      monstrarAlertaSucess();
+      navigate("/");
     } catch (error) {
       console.error(error.response.data);
     }

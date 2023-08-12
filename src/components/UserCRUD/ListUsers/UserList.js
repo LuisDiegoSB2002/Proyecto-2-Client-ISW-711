@@ -33,6 +33,8 @@ const UserList = () => {
             <li className='id-user' key={user._id}>
               <p className='name'>Nombre: {user.name}</p>
               <p className='email'>Email: {user.email}</p>
+              <p className='rol'>Rol: {user.role}</p>
+              <p className='estado'>Estado: {user.estado}</p>
               <Link to ="/CreateUser" className='btn-create'> <img src={logoCrate} /></Link>
               <Link to={`/EditUser/${user._id}`} className='btn-edit'> <img src={logoEdit} /></Link>
               <Link to ={`/DeleteUser/${user._id}`} className='btn-delete'> <img src={logoDelete} /></Link>
