@@ -9,10 +9,21 @@ import HomePage from '../HomePage/HomePage';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('+50670982247');
   const navigate = useNavigate();
+  const sendVerificationCode = async () => {
+    try {
+      const response = await axios.post('/sendVerificationCode', { phoneNumber });
+      setMessage(response.data.message);
+    } catch (error) {
+      console.error(error);
+      setMessage('Error en el servidor.');
+    }
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     
 
     try {
@@ -20,6 +31,7 @@ const Login = () => {
       sessionStorage.setItem("token",response.data.token);
       
       sessionStorage.setItem("name",response.data.name);
+      sessionStorage.setItem("phone",response.data.phoneNumber);
       
       navigate("/homePage");
     } catch (error) {
