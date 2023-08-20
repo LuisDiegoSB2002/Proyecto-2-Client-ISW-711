@@ -4,37 +4,67 @@ import './Login.css';
 import Register from '../Register/Register';
 import { Link,useNavigate } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
+import sweet from 'sweetalert';
 
+const monstrarAlertaSucess = () => {
+
+  sweet({
+    title: "El código fue enviado con éxito",
+    text: "",
+    icon: "success",
+    buttons: "Aceptar"
+  });
+
+}
+const monstrarError = () => { 
+
+  sweet({
+    title: "Sus credenciales son inválidas",
+    text: "",
+    icon: "warning",
+    buttons: "Aceptar"
+  });
+
+}
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('+50670982247');
+  const phoneNumber = sessionStorage.getItem("phone");
+  
   const navigate = useNavigate();
-  const sendVerificationCode = async () => {
+
+
+  const sendCode = async () => {
+    console.log("estoy en verificar: "+ phoneNumber);
     try {
-      const response = await axios.post('/sendVerificationCode', { phoneNumber });
-      setMessage(response.data.message);
+      const response = await axios.post('http://localhost:3001/sendVerificationCode', { phoneNumber });
+      monstrarAlertaSucess();
     } catch (error) {
       console.error(error);
-      setMessage('Error en el servidor.');
+      
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    
+     
 
     try {
       const response = await axios.post('http://localhost:3001/login', { email, password });
+      sessionStorage.setItem("phone",response.data.phone);
+      
+      sendCode(e);
+      
       sessionStorage.setItem("token",response.data.token);
       
       sessionStorage.setItem("name",response.data.name);
-      sessionStorage.setItem("phone",response.data.phoneNumber);
       
-      navigate("/homePage");
+      
+      navigate("/validarSMS");
     } catch (error) {
+      monstrarError();
       console.error(error.response.data);
     }
   };

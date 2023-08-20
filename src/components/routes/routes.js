@@ -13,8 +13,9 @@ import EditPrompts from "../PromptsCRUD/EditPrompts/EditPrompts.js";
 import DeletePrompts from "../PromptsCRUD/DeletePrompts/DeletePrompts.js";
 
 import ValidarSendEmail from "../validacion/validateEmail.js";
+import ValidarSMS from "../validacion/valiSMS.js";
 import Logout from "../Logout/Logout.js";
-function AllRoutes() {
+function AllRoutes() { 
 
     return (
         <BrowserRouter> 
@@ -32,6 +33,7 @@ function AllRoutes() {
                 <Route path="/DeletePrompts/:id" element={<DeletePrompts/>} />
                 <Route path="/EditPrompts/:id" element={<EditPrompts/>} />
                 <Route path="/validarEmail/:token" element={<ValidarSendEmail/>} />
+                <Route path="/validarSMS" element={<ValidarSMS/>} />
                 <Route path="/Logout" element={<Logout/>} />
 
             </Routes>
