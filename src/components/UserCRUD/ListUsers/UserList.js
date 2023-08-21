@@ -19,13 +19,13 @@ const UserList = () => {
       })
       .catch((error) => {
         console.error(error);
-      });
+      }); 
   }, []);
 
   return (
     <div>
       <Navbar/>
-      <h2 className='titulo'>Lista de Usuarios</h2>
+      <h2 className='titulo'>Lista de Usuarios</h2> 
 
       <ul className='contenedor'>
         <div className='user'>

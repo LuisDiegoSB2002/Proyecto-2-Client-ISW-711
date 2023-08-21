@@ -58,7 +58,7 @@ const Register = () => {
   };
 
 
-  
+   
 
 
   return (
@@ -70,7 +70,7 @@ const Register = () => {
         <input type="phone" placeholder="telefono" value={phone} onChange={(e) => setPhone(e.target.value)} required />
         <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <button type="submit" className='btn-register'>Registrarse</button>
-        <Link to="/login" className='btn-volver'> Volver</Link>
+        <Link to="/" className='btn-volver'> Volver</Link>
       </form>
     </div>
   );
