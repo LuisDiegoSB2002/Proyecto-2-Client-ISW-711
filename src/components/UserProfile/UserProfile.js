@@ -7,7 +7,7 @@ import './UserProfile.css';
 
 import resetContra from "../../img/resetContra.png";
 import logoEdit from "../../img/editar.png";
-import logoDelete from "../../img/borrar.png";
+
 
 import sweet from 'sweetalert';
 
@@ -31,23 +31,14 @@ const DosPaDesactive = () => {
   });
 
 }
-const monstrarError = () => {
 
-  sweet({
-    title: "Hubo un error al realizar la acción",
-    text: "Por favor intentelo de nuevo",
-    icon: "warning",
-    buttons: "Aceptar"
-  });
-
-}
 const UserProfile = () => {
   const [isActive, setIsActive] = useState(false);
   const [user, setUser] = useState(null);
-  const [twoFactorEnabled, setTwoFactorEnabled] = useState(false); // Nuevo estado
+
   const { id } = useParams();
-  const { token } = useParams();
-  const [isEstado, setEstado] = useState(sessionStorage.getItem("valiSwitch"));
+  
+  
   
   useEffect(() => {
     const fetchUser = async () => {
@@ -71,7 +62,7 @@ const UserProfile = () => {
      
     try {
       
-      await axios.get(`http://localhost:3001/activaValidacion`, { validacion: !twoFactorEnabled });
+      await axios.get(`http://localhost:3001/activaValidacion`);
       
       
       DosPaActive();
@@ -83,7 +74,7 @@ const UserProfile = () => {
   const handleTwoFactorDesactive= async () => {
     try {
       
-      await axios.get(`http://localhost:3001/desactivaValidacion`, { validacion: !twoFactorEnabled });
+      await axios.get(`http://localhost:3001/desactivaValidacion`);
       
       
       DosPaDesactive();
@@ -104,11 +95,11 @@ const UserProfile = () => {
   };
   const validarEstado = () => { 
     
-    if ( sessionStorage.getItem("valiSwitch")== "Activa") {
+    if ( sessionStorage.getItem("valiSwitch")=== "Activa") {
       
       setIsActive(true);
       
-    } else if (sessionStorage.getItem("valiSwitch") == "Inactiva") {
+    } else if (sessionStorage.getItem("valiSwitch") === "Inactiva") {
       
       setIsActive(false);
       
@@ -139,8 +130,8 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="btn">
-            <Link to={`/ChangePassword/${id}`} className='btn-create'> <img src={resetContra} title='Cambiar Contraseña' /></Link>
-            <Link to={`/EditProfile/${id}`} className='btn-edit'> <img src={logoEdit} title='Editar Información de Usuario' /></Link>
+            <Link to={`/ChangePassword/${id}`} className='btn-create'> <img src={resetContra} alt="Editar contraseña" title='Cambiar Contraseña' /></Link>
+            <Link to={`/EditProfile/${id}`} className='btn-edit'> <img src={logoEdit} alt="Editar Perfil" title='Editar Información de Usuario' /></Link>
             
           </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import "./ChangePassword.css";
 import sweet from 'sweetalert';
 
@@ -21,7 +21,7 @@ const success = () => {
 const ChangePassword = ({ userId }) => {
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const [message, setMessage] = useState('');
+
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -33,12 +33,12 @@ const ChangePassword = ({ userId }) => {
         try {
 
             const response = await axios.patch(`http://localhost:3001/changePasword/${id}`, userData);
-            setMessage(response.data.message);
+            console.log(response)
             success();
             navigate(`/UserProfile/${sessionStorage.getItem("userId")}`);
         } catch (error) {
             console.error(error);
-            setMessage('Error al cambiar la contraseña');
+            
         }
     };
 

@@ -52,6 +52,7 @@ const EditProfile = () => {
         try {
             // Realizar la solicitud PUT al servidor 
             const response = await axios.patch(`http://localhost:3001/editProfile/${id}`, userData)
+            console.log(response);
             navigate(`/UserProfile/${sessionStorage.getItem("userId")}`);
             success();
 
