@@ -2,6 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
+import sweet from 'sweetalert';
+
+const success = () => {
+
+  sweet({
+    title: "Su información fue actualizada con éxito",
+    text: "",
+    icon: "success",
+    buttons: "Aceptar"
+  });
+
+}
+
+
 const EditProfile = () => {
 
     const [newName, setName] = useState('');
@@ -39,6 +53,7 @@ const EditProfile = () => {
             // Realizar la solicitud PUT al servidor 
             const response = await axios.patch(`http://localhost:3001/editProfile/${id}`, userData)
             navigate(`/UserProfile/${sessionStorage.getItem("userId")}`);
+            success();
 
         } catch (error) {
             console.error('Error al actualizar el usuario:', error);

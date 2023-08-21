@@ -14,6 +14,7 @@ import DeletePrompts from "../PromptsCRUD/DeletePrompts/DeletePrompts.js";
 
 import UserProfile from "../UserProfile/UserProfile.js";
 import EditProfile from "../UserProfile/EditProfile.js";
+import ChangePassword from "../ChangePasword/ChangePasword.js";
 
 import ValidarSendEmail from "../validacion/validateEmail.js";
 import ValidarSMS from "../validacion/valiSMS.js";
@@ -38,6 +39,7 @@ function AllRoutes() {
 
                 <Route path="/UserProfile/:id" element={<UserProfile/>} />
                 <Route path="/editProfile/:id" element={<EditProfile/>} />
+                <Route path="/ChangePassword/:id" element={<ChangePassword/>} />
 
                 <Route path="/validarEmail/:token" element={<ValidarSendEmail/>} />
                 <Route path="/validarSMS" element={<ValidarSMS/>} /> 

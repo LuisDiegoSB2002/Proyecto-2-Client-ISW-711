@@ -139,9 +139,9 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="btn">
-            <Link to="/CreateUser" className='btn-create'> <img src={resetContra} title='Cambiar Contraseña' /></Link>
+            <Link to={`/ChangePassword/${id}`} className='btn-create'> <img src={resetContra} title='Cambiar Contraseña' /></Link>
             <Link to={`/EditProfile/${id}`} className='btn-edit'> <img src={logoEdit} title='Editar Información de Usuario' /></Link>
-            <Link to={`/DeleteUser/${id}`} className='btn-delete'> <img src={logoDelete} title='Eliminar Usuario' /></Link>
+            
           </div>
 
 
