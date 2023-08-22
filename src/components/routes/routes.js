@@ -11,6 +11,7 @@ import DeleteUser from "../UserCRUD/DeleteUser/DeleteUser.js";
 import CreatePrompts from "../PromptsCRUD/CreatePrompts/CreatePrompts.js";
 import EditPrompts from "../PromptsCRUD/EditPrompts/EditPrompts.js";
 import DeletePrompts from "../PromptsCRUD/DeletePrompts/DeletePrompts.js";
+import SearchPage from "../searchPage/searchPage.js";
 
 import UserProfile from "../UserProfile/UserProfile.js";
 import EditProfile from "../UserProfile/EditProfile.js";
@@ -36,6 +37,7 @@ function AllRoutes() {
                 <Route path="/createPrompts" element={<CreatePrompts/>} />
                 <Route path="/DeletePrompts/:id" element={<DeletePrompts/>} />
                 <Route path="/EditPrompts/:id" element={<EditPrompts/>} />
+                <Route path="/SearchPage" element={<SearchPage/>} />
 
                 <Route path="/UserProfile/:id" element={<UserProfile/>} />
                 <Route path="/editProfile/:id" element={<EditProfile/>} />

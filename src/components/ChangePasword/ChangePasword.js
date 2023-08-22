@@ -15,6 +15,17 @@ const success = () => {
 
 }
 
+const errorMessage = () => {
+
+    sweet({
+      title: "Su contraseña no es correcta",
+      text: "",
+      icon: "error",
+      buttons: "Aceptar"
+    });
+  
+  }
+
 
 
 
@@ -36,7 +47,8 @@ const ChangePassword = ({ userId }) => {
             console.log(response)
             success();
             navigate(`/UserProfile/${sessionStorage.getItem("userId")}`);
-        } catch (error) {
+        } catch (error) { 
+            errorMessage();
             console.error(error);
             
         }

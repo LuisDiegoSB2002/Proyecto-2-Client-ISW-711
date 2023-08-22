@@ -1,0 +1,13 @@
+.resultados{
+    background-color: blue;
+}
+.combox {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .opcion {
+    font-size: 16px;
+  }

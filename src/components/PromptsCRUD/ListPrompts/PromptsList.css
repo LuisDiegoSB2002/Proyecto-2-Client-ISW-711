@@ -28,7 +28,8 @@
   /* Estilos para los botones */
   .btn-create,
   .btn-edit,
-  .btn-delete {
+  .btn-delete,
+  .btn-buscar {
     display: inline-block;
     margin-top: 10px;
     margin-right: 10px;
@@ -40,8 +41,14 @@
   
   .btn-create img,
   .btn-edit img,
-  .btn-delete img {
+  .btn-delete img,
+  .btn-buscar img {
     height: 20px; /* Ajustar el tamaño de las imágenes según tu preferencia */
+  }
+  .btn-buscar {
+    height: 50px;
+    position: 100%;
+    width: 40px;
   }
   
   /* Estilos para el botón "Volver" */
@@ -57,5 +64,6 @@
     text-decoration: none;
     
   }
+
   
   

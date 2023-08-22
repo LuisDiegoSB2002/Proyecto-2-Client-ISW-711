@@ -7,7 +7,7 @@ import "./PromptsList.css";
 import logoCrate from "../../../img/create-user-icon.png";
 import logoEdit from "../../../img/editar.png";
 import logoDelete from "../../../img/borrar.png";
-
+import logoLupa from "../../../img/lupa.png";
 const PromptsList = () => {
   const [prompts, setPrompts] = useState([]);
 
@@ -22,29 +22,33 @@ const PromptsList = () => {
       });
   }, []);
 
+
   return (
     <div>
-      
+
       <h2 className='titulo'>Lista de Prompts</h2>
+
+
 
       <ul className='contenedor'>
         <div className='user'>
+        <Link to="/SearchPage" className='btn-create'> <img src={logoLupa} /></Link>
           {prompts.map((prompt) => (
-            
+
             <li className='id-user' key={prompt._id}>
               <p className='name'>Nombre: {prompt.name}</p>
               <p className='tipo'>Tipo: {prompt.tipo}</p>
               <p className='IdUsuario'>ID Usuario: {prompt.idUser}</p>
               <p className='etiquetas'>Etiquetas: {prompt.etiquetas}</p>
-              <Link to ="/createPrompts" className='btn-create'> <img src={logoCrate} /></Link>
+              <Link to="/createPrompts" className='btn-create'> <img src={logoCrate} /></Link>
               <Link to={`/EditPrompts/${prompt._id}`} className='btn-edit'> <img src={logoEdit} /></Link>
-              <Link to ={`/DeletePrompts/${prompt._id}`} className='btn-delete'> <img src={logoDelete} /></Link>
-            </li> 
-            
+              <Link to={`/DeletePrompts/${prompt._id}`} className='btn-delete'> <img src={logoDelete} /></Link>
+            </li>
+
           ))}
         </div>
       </ul>
-      
+
     </div>
   );
 };
